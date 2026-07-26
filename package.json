@@ -1,0 +1,57 @@
+{
+  "name": "@majikah/majik-key-client",
+  "type": "module",
+  "description": "The base parent client class for Majikah applications, centralizing post-quantum cryptographic account management, keystores, and client state.",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "author": "Zelijah",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Majikah/majik-signature-client.git"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/jedlsf"
+  },
+  "keywords": [
+    "majikah",
+    "majik-key-client",
+    "majik-key",
+    "account-management",
+    "keystore",
+    "cryptographic-client",
+    "base-client",
+    "post-quantum",
+    "post-quantum-cryptography",
+    "hybrid-cryptography",
+    "client-state",
+    "data-integrity",
+    "typescript"
+  ],
+  "homepage": "https://github.com/Majikah/majik-key-client#readme",
+  "bugs": {
+    "url": "https://github.com/Majikah/majik-key-client/issues"
+  },
+  "scripts": {
+    "update": "npm install @majikah/majik-key@latest @majikah/majik-contact@latest",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build",
+    "package": "npm run build && npm version patch && git push && git push --tags",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@majikah/majik-contact": "^0.0.6",
+    "@majikah/majik-key": "^0.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1"
+  }
+}
