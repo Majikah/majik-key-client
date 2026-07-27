@@ -12,7 +12,7 @@
  * three hook methods below.
  */
 
-import { MajikKey } from "@majikah/majik-key";
+import { MajikKey, MajikKeyFingerprint } from "@majikah/majik-key";
 import { MnemonicLanguage } from "@majikah/majik-key/dist/core/crypto/wordlist";
 
 import { MajikKeyManager } from "./core/crypto/keystore-manager";
@@ -43,7 +43,7 @@ export class MajikKeyClientError extends Error {
  */
 export interface MajikKeyClientContact {
   id: string;
-  meta?: { label?: string; [key: string]: unknown };
+  meta?: { label?: string };
 }
 
 // ─── Events ───────────────────────────────────────────────────────────────────
@@ -286,9 +286,12 @@ export abstract class MajikKeyClient<
     passphrase: string,
     label?: string,
     meta?: Partial<TContactMeta>,
-  ): Promise<{ id: string; fingerprint: string; backup: string }> {
+    mnemonicLanguage: MnemonicLanguage = "en",
+  ): Promise<{ id: string; fingerprint: MajikKeyFingerprint; backup: string }> {
     try {
-      const key = await MajikKey.create(mnemonic, passphrase, label);
+      const key = await MajikKey.create(mnemonic, passphrase, label, {
+        mnemonicLanguage: mnemonicLanguage,
+      });
       await this._keys.save(key);
       const contact = this._buildOwnAccountContact(key, meta);
       this._registerOwnAccount(contact);
@@ -306,7 +309,7 @@ export abstract class MajikKeyClient<
     passphrase: string,
     label?: string,
     meta?: Partial<TContactMeta>,
-  ): Promise<{ id: string; fingerprint: string }> {
+  ): Promise<{ id: string; fingerprint: MajikKeyFingerprint }> {
     try {
       const key = await this._keys.importFromMnemonicBackup(
         backupBase64,
@@ -337,7 +340,7 @@ export abstract class MajikKeyClient<
     passphrase: string,
     label?: string,
     meta?: Partial<TContactMeta>,
-  ): Promise<{ id: string; fingerprint: string }> {
+  ): Promise<{ id: string; fingerprint: MajikKeyFingerprint }> {
     try {
       const currentAccount = this.getActiveAccountKey();
       const currentContact = this.getActiveAccount();
