@@ -52,6 +52,7 @@
     "@majikah/majik-key": "^0.3.3"
   },
   "devDependencies": {
-    "@types/node": "^26.1.1"
+    "@types/node": "^26.1.1",
+    "vitest": "^4.1.10"
   }
 }
