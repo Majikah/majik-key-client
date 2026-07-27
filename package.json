@@ -2,7 +2,7 @@
   "name": "@majikah/majik-key-client",
   "type": "module",
   "description": "The base parent client class for Majikah applications, centralizing post-quantum cryptographic account management, keystores, and client state.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "Apache-2.0",
   "author": "Zelijah",
   "main": "./dist/index.js",
