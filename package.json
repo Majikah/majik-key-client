@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Majikah/majik-signature-client.git"
+    "url": "git+https://github.com/Majikah/majik-key-client.git"
   },
   "funding": {
     "type": "github",
