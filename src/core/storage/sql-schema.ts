@@ -1,7 +1,7 @@
 type MajikahSQLSchema = string;
 
 export const MAJIKAH_SQL_TABLE_MAJIK_KEY = "majik_keys";
-export const MAJIKAH_SQL_TABLE_MAJIK_KEY_CLIENT_STATE = "majik_keys";
+export const MAJIKAH_SQL_TABLE_MAJIK_KEY_CLIENT_STATE = "majik_client_state";
 
 function normalizeSQL(sql: MajikahSQLSchema): string {
   return sql
