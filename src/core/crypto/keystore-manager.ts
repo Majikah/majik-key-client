@@ -448,12 +448,16 @@ export class MajikKeyManager {
     mnemonic: string,
     passphrase: string,
     label?: string,
+    language: MnemonicLanguage = "en",
   ): Promise<MajikKey> {
     const key = await MajikKey.importFromMnemonicBackup(
       backupBase64,
       mnemonic,
       passphrase,
       label,
+      {
+        mnemonicLanguage: language,
+      },
     );
     await this.save(key);
     return key;
