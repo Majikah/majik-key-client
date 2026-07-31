@@ -327,6 +327,7 @@ export class MajikKeyManager {
     newPassphrase: string,
     expectedId: string,
     label?: string,
+    language?: MnemonicLanguage,
   ): Promise<MajikKey> {
     if (!backup?.trim())
       throw new MajikKeyManagerError("replacePassphrase: backup is required");
@@ -349,11 +350,17 @@ export class MajikKeyManager {
     //    importFromMnemonicBackup verifies the mnemonic against the backup's
     //    encrypted payload — if it doesn't match, it throws before touching storage.
     const resolvedLabel = label ?? existing.label;
+
+    const resolvedLanguage = language ?? existing.mnemonicLanguage ?? "en"; // NEW
+
     const freshKey = await MajikKey.importFromMnemonicBackup(
       backup,
       mnemonic,
       newPassphrase,
       resolvedLabel,
+      {
+        mnemonicLanguage: resolvedLanguage,
+      },
     );
 
     // 3. Cross-check: the re-derived fingerprint must match the stored account.
