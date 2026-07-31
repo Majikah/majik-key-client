@@ -309,6 +309,7 @@ export abstract class MajikKeyClient<
     passphrase: string,
     label?: string,
     meta?: Partial<TContactMeta>,
+    language: MnemonicLanguage = "en",
   ): Promise<{ id: string; fingerprint: MajikKeyFingerprint }> {
     try {
       const key = await this._keys.importFromMnemonicBackup(
@@ -316,6 +317,7 @@ export abstract class MajikKeyClient<
         mnemonic,
         passphrase,
         label,
+        language,
       );
       if (this.getOwnAccountById(key.id)) {
         throw new MajikKeyClientError(
@@ -340,6 +342,7 @@ export abstract class MajikKeyClient<
     passphrase: string,
     label?: string,
     meta?: Partial<TContactMeta>,
+    language: MnemonicLanguage = "en",
   ): Promise<{ id: string; fingerprint: MajikKeyFingerprint }> {
     try {
       const currentAccount = this.getActiveAccountKey();
@@ -352,6 +355,7 @@ export abstract class MajikKeyClient<
         mnemonic,
         passphrase,
         finalLabel,
+        language,
       );
 
       // 2. Prevent duplicate (except self-replace)
