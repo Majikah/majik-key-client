@@ -10,20 +10,27 @@ This document covers how to report a vulnerability, what's in and out of scope, 
 
 **Please do not open a public GitHub issue for security vulnerabilities.**
 
-Report privately by emailing:
+Report privately via:
 
-**business@majikah.solutions**
+1. **GitHub Private Vulnerability Reporting**  — [github.com/Majikah/majik-key/security](https://github.com/Majikah/majik-key/security)
+2. **Email** — [business@majikah.solutions](mailto:business@majikah.solutions), with `SECURITY` in the subject line
 
-Please include, as applicable:
-
-- A description of the vulnerability and its potential impact
+Please include:
+- A description of the issue and its potential impact
 - Steps to reproduce, or a minimal proof-of-concept
-- The affected version(s) or commit hash
-- Whether you believe the issue is in Majik Key itself, or in one of its dependencies
+- The affected version(s), and whether the issue is in this package or a dependency
+- Whether the issue is in the core cryptographic path
 
-We will acknowledge receipt of your report as soon as we're able, and aim to keep you updated as we investigate. Response and remediation times depend on severity and complexity, so we can't commit to a fixed SLA here — if you need a specific timeline commitment for coordinated disclosure, say so in your initial report and we'll do our best to accommodate it.
+**This is a small, independently maintained project — response times are best-effort, not a contractual SLA.** In good faith, we aim to:
 
-We ask that you give us a reasonable opportunity to investigate and address a report before any public disclosure. We don't currently operate a paid bug bounty program.
+| Stage                                   | Target                               |
+| --------------------------------------- | ------------------------------------ |
+| Initial acknowledgment                  | Within 5 business days               |
+| Preliminary assessment                  | Within 10 business days              |
+| Fix or mitigation, for confirmed issues | Best-effort, prioritized by severity |
+
+We will keep you informed as the report is triaged and credit reporters (if desired) once a fix ships, in line with the [Disclosure Policy](#disclosure-policy) below.
+
 
 ---
 

@@ -49,10 +49,10 @@
   },
   "dependencies": {
     "@majikah/majik-contact": "^0.0.6",
-    "@majikah/majik-key": "^0.5.2"
+    "@majikah/majik-key": "^0.6.0"
   },
   "devDependencies": {
-    "@types/node": "^26.6.2",
-    "vitest": "^5.0.1"
+    "@types/node": "^26.6.3",
+    "vitest": "^5.0.2"
   }
 }
