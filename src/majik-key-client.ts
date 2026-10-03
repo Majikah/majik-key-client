@@ -677,7 +677,7 @@ export abstract class MajikKeyClient<
       });
       await this._keys.save(key);
       const contact = this._buildOwnAccountContact(key, meta);
-      this._registerOwnAccount(contact);
+      await this._registerOwnAccount(contact);
       this._emitBase("new-account", contact);
       return { id: key.id, fingerprint: key.fingerprint, backup: key.backup };
     } catch (err) {
@@ -725,7 +725,7 @@ export abstract class MajikKeyClient<
         );
       }
       const contact = this._buildOwnAccountContact(key, meta);
-      this._registerOwnAccount(contact);
+      await this._registerOwnAccount(contact);
       this._emitBase("new-account", contact);
       return { id: key.id, fingerprint: key.fingerprint };
     } catch (err) {
@@ -797,7 +797,7 @@ export abstract class MajikKeyClient<
       }
 
       // 4. Register new + set active
-      this._registerOwnAccount(contact);
+      await this._registerOwnAccount(contact);
       await this.setActiveAccount(contact.id, true);
 
       this._emitBase("new-account", contact);
@@ -837,8 +837,8 @@ export abstract class MajikKeyClient<
    *
    * @fires `new-account` with the supplied contact.
    */
-  addOwnAccount(account: TContact): void {
-    this._registerOwnAccount(account);
+  async addOwnAccount(account: TContact): Promise<void> {
+    await this._registerOwnAccount(account);
     this._emitBase("new-account", account);
   }
 
@@ -1206,7 +1206,7 @@ export abstract class MajikKeyClient<
    * schedules order persistence, synchronizes the subclass directory through
    * `_onAccountRegistered`, and automatically activates the first account.
    */
-  protected _registerOwnAccount(contact: TContact): void {
+  protected async _registerOwnAccount(contact: TContact): Promise<void> {
     const hasActive = !!this.getActiveAccount();
 
     if (!this._ownAccounts.has(contact.id)) {
@@ -1218,12 +1218,12 @@ export abstract class MajikKeyClient<
       this._scheduleOrderSave();
     }
 
-    void this._onAccountRegistered(contact);
+    await this._onAccountRegistered(contact);
 
     if (!hasActive) {
       // setActiveAccount will now correctly handle adding it to _ownAccountsOrder
       // and emitting the "active-account-change" event.
-      void this.setActiveAccount(contact.id, true);
+      await this.setActiveAccount(contact.id, true);
     }
   }
 
