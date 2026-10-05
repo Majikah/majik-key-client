@@ -13,7 +13,7 @@
  */
 
 import { MajikKey, MajikKeyFingerprint } from "@majikah/majik-key";
-import { MnemonicLanguage } from "@majikah/majik-key/dist/core/crypto/wordlist";
+import { MnemonicLanguage } from "@majikah/majik-key";
 
 import { MajikKeyManager } from "./core/crypto/keystore-manager";
 import { MajikKeyStorageAdapter } from "./core/storage/keystore/_types";
