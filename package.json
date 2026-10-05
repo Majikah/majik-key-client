@@ -48,8 +48,8 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@majikah/majik-contact": "^0.1.1",
-    "@majikah/majik-key": "^1.0.1"
+    "@majikah/majik-contact": "^0.2.0",
+    "@majikah/majik-key": "^1.0.2"
   },
   "devDependencies": {
     "@types/node": "^26.6.4",
