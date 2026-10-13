@@ -1,7 +1,7 @@
 # Majik Key Client
 
 
-[![Developed by Zelijah](https://img.shields.io/badge/Developed%20by-Zelijah-red?logo=github&logoColor=white)](https://www.thezelijah.world) ![GitHub Sponsors](https://img.shields.io/github/sponsors/jedlsf?style=plastic&label=Sponsors&link=https%3A%2F%2Fgithub.com%2Fsponsors%2Fjedlsf)
+[![Developed by Zelijah](https://img.shields.io/badge/Developed%20by-Zelijah-red?logo=github&logoColor=white&style=for-the-badge)](https://thezelijah.world) ![GitHub Sponsors](https://img.shields.io/github/sponsors/jedlsf?style=for-the-badge&label=Sponsors&link=https%3A%2F%2Fgithub.com%2Fsponsors%2Fjedlsf)
 
 ![npm](https://img.shields.io/npm/v/@majikah/majik-key-client) ![npm downloads](https://img.shields.io/npm/dm/@majikah/majik-key-client) ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
@@ -104,7 +104,7 @@ Developed by **Josef Elijah Fabian (Zelijah)** | [Majikah Solutions OPC](https:/
 
 **GitHub**: [https://github.com/Majikah](https://github.com/Majikah)
 
-**Project Repository**: [https://github.com/Majikah/majik-signature](https://github.com/Majikah/majik-signature)
+**Project Repository**: [https://github.com/Majikah/majik-key-client](https://github.com/Majikah/majik-key-client)
 
 **Technical Whitepaper**: [https://zenodo.org/records/21339132](https://zenodo.org/records/21339132)
 
