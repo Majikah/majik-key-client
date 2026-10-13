@@ -10,8 +10,7 @@
 ---
 
 ## Why Majik Key Client?
-[![ZENODO](https://img.shields.io/badge/Read_the_Technical_Whitepaper_Here-1682D4?style=for-the-badge&logo=zenodo&logoColor=white)](https://doi.org/10.5281/zenodo.21339132)
-
+[![Zenodo](https://img.shields.io/badge/Technical%20Whitepaper-Zenodo-1682D4?style=for-the-badge&logo=zenodo&logoColor=white)](https://doi.org/10.5281/zenodo.23208491) [![Majikah](https://img.shields.io/badge/Read%20the%20Article-Majikah-EA7F05?style=for-the-badge)](https://majikah.solutions/articles/majik-key-whitepaper)
 
 When building products on top of `Majik Key` (which turns a BIP-39 mnemonic into a hybrid post-quantum identity), applications consistently need the same infrastructure:
 - **Account Management**: Creating, importing, updating, and removing cryptographic identities.
@@ -106,7 +105,7 @@ Developed by **Josef Elijah Fabian (Zelijah)** | [Majikah Solutions OPC](https:/
 
 **Project Repository**: [https://github.com/Majikah/majik-key-client](https://github.com/Majikah/majik-key-client)
 
-**Technical Whitepaper**: [https://zenodo.org/records/21339132](https://zenodo.org/records/21339132)
+**Technical Whitepaper**: [https://zenodo.org/records/23208491](https://zenodo.org/records/23208491)
 
 ---
 
